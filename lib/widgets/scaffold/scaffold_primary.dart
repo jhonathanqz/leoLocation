@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:location_leo/style/app_colors.dart';
 import 'package:location_leo/widgets/scaffold/app_bar_widgets.dart';
 import 'package:location_leo/widgets/scaffold/loading.dart';
 
@@ -36,7 +37,7 @@ class ScaffoldPrimary extends StatelessWidget {
         widget: isAction ? widgetAction : Container(),
       ),
       floatingActionButton: floatingActionButton ?? Container(),
-      backgroundColor: Colors.grey[100],
+      backgroundColor: AppColors.background,
       body: Loading(
         isLoading: isLoading,
         child: Column(

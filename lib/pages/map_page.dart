@@ -3,6 +3,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location_leo/app/injection_container.dart';
 import 'package:location_leo/mobx/map.store.dart';
+import 'package:location_leo/style/app_edgeinsets.dart';
+import 'package:location_leo/style/app_size.dart';
 import 'package:location_leo/widgets/card_location_image.dart';
 import 'package:location_leo/widgets/scaffold/scaffold_primary.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -27,7 +29,6 @@ class _MapPageState extends State<MapPage> {
 
   @override
   void initState() {
-    
     mapStore.getCurrentLocation();
 
     super.initState();
@@ -42,11 +43,11 @@ class _MapPageState extends State<MapPage> {
         titleWidget: Text(locationinfo),
         isAction: true,
         widgetAction: Padding(
-          padding: const EdgeInsets.only(right: 5),
+          padding: AppEdgeInsets.minR,
           child: IconButton(
               icon: Icon(
                 Icons.location_on,
-                size: 30,
+                size: AppSize.iconSize,
               ),
               onPressed: () async {
                 grantPermissions(function: () async {
@@ -76,7 +77,7 @@ class _MapPageState extends State<MapPage> {
                     mapStore.latDevice,
                     mapStore.lngDevice,
                   ),
-                  zoom: 11,
+                  zoom: AppSize.zoomMap,
                 ),
                 markers: markers,
               ),
@@ -123,7 +124,7 @@ class _MapPageState extends State<MapPage> {
     @required MapStore mapStore,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: 15),
+      margin: AppEdgeInsets.sdTop,
       height: 110,
       child: ListView(
         scrollDirection: Axis.horizontal,

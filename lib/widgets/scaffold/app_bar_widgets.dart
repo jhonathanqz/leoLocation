@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:location_leo/style/app_colors.dart';
 
 @immutable
 class AppBarWidget extends PreferredSize {
@@ -13,7 +14,7 @@ class AppBarWidget extends PreferredSize {
           key: key,
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: AppBar(
-            backgroundColor: Colors.blue[900],
+            backgroundColor: AppColors.primaryColor,
             title: titleWidget,
             centerTitle: true,
             leading: leading,

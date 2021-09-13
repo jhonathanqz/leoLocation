@@ -22,6 +22,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Cole a chave da API no caminho "android/app/src/main/andoridManifest.xml
 - Inicie seu app com `flutter run`
 
+
 ---
 <br>
 Obs: No arquivo androidManifest.xml vai estar escrito "SUA_API_AQUI".

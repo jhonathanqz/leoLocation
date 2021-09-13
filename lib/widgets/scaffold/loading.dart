@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:location_leo/style/app_colors.dart';
+import 'package:location_leo/style/app_size.dart';
 
 class Loading extends StatelessWidget {
   final bool isLoading;
@@ -12,25 +14,27 @@ class Loading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
       fit: StackFit.passthrough,
       children: [
         child,
         SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
+          height: size.height,
+          width: size.width,
           child: Visibility(
             visible: isLoading,
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height,
+              height: size.height,
               color: Colors.transparent.withOpacity(0.6),
               child: const Center(
                 child: SizedBox(
-                  height: 50,
-                  width: 50,
+                  height: AppSize.progressSize,
+                  width: AppSize.progressSize,
                   child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation(Colors.green),
+                    valueColor:
+                        AlwaysStoppedAnimation(AppColors.greenInformation),
                   ),
                 ),
               ),

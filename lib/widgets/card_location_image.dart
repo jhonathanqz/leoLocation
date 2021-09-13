@@ -1,5 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:location_leo/style/app_colors.dart';
+import 'package:location_leo/style/app_edgeinsets.dart';
+import 'package:location_leo/style/app_size.dart';
 
 class CardLocationImage extends StatelessWidget {
   const CardLocationImage({
@@ -16,9 +19,9 @@ class CardLocationImage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         color: Colors.transparent.withOpacity(0.2),
-        margin: EdgeInsets.symmetric(horizontal: 5),
-        height: 100,
-        width: 200,
+        margin: AppEdgeInsets.minH,
+        height: AppSize.heightCard,
+        width: AppSize.widthCard,
         child: Row(
           children: [
             Expanded(
@@ -27,11 +30,12 @@ class CardLocationImage extends StatelessWidget {
                   imageUrl: urlImage,
                   fit: BoxFit.fill,
                   placeholder: (context, urlImage) => Container(
-                    height: 40,
-                    width: 40,
+                    height: AppSize.imageSize,
+                    width: AppSize.imageSize,
                     child: Center(
                       child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation(Colors.green),
+                        valueColor:
+                            AlwaysStoppedAnimation(AppColors.greenInformation),
                       ),
                     ),
                   ),

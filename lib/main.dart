@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:location_leo/app/injection_container.dart';
 import 'package:location_leo/pages/splash_screen_page.dart';
+import 'package:location_leo/style/app_colors.dart';
 
 import 'app/injection_container.dart';
 
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'leoLocation',
+      title: 'locationFlutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: AppColors.themeData,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashScreenPage(),

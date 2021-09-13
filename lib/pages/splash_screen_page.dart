@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:location_leo/app/injection_container.dart';
 import 'package:location_leo/mobx/map.store.dart';
 import 'package:location_leo/mobx/splash.store.dart';
+import 'package:location_leo/style/app_colors.dart';
+import 'package:location_leo/style/app_size.dart';
+import 'package:location_leo/style/app_spacing.dart';
+import 'package:location_leo/style/app_textstyle.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({Key key}) : super(key: key);
@@ -25,11 +29,11 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.blue[800],
+      color: AppColors.splashColor,
       child: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: Colors.blue[800],
+        color: AppColors.splashColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,24 +44,19 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               child: Center(
                 child: Icon(
                   Icons.near_me,
-                  color: Colors.white,
-                  size: 80,
+                  color: AppColors.lightColor,
+                  size: AppSize.iconSizeSplash,
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            AppSpacing.sd,
             AnimatedCard(
               direction: AnimatedCardDirection.top,
               curve: Curves.elasticOut,
               child: Center(
                 child: Text(
                   'Location Flutter',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 35,
-                  ),
+                  style: AppTextStyle.titleSplash,
                 ),
               ),
             ),
